@@ -88,6 +88,12 @@
   - UpToDate
   - Medscape
   - BMJ Learning
+  - WebMD
+  - MedlinePlus
+  - Mayo Clinic
+  - Healthline
+  - Cleveland Clinic
+  - MSD Manual (默沙东诊疗手册)
 - 药物信息数据库
   - FDA
   - EMA
