@@ -1,0 +1,339 @@
+<html><head><base href="/" /><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>国际医学指南与资源导航</title>
+<style>
+:root {
+  --primary: #2c6ba0;
+  --secondary: #4a90e2;
+  --text: #333;
+  --light: #f5f7fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--light);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-tab {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.nav-tab.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: grid;
+}
+
+.guideline-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.guideline-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  fill: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.guideline-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.guidelines-list {
+  list-style: none;
+}
+
+.guidelines-list li {
+  margin-bottom: 0.5rem;
+}
+
+.guidelines-list a {
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guidelines-list a:hover {
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .guidelines-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-tabs {
+    flex-wrap: wrap;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>国际医学指南与资源导航</h1>
+    <p>全球权威医学指南与资源集成平台</p>
+  </header>
+
+  <nav class="nav-tabs">
+    <button class="nav-tab active" data-section="guidelines">临床指南</button>
+    <button class="nav-tab" data-section="resources">医学资源</button>
+  </nav>
+
+  <main>
+    <section id="guidelines" class="guidelines-grid section active">
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        </svg>
+        <h3>心血管疾病指南</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.escardio.org/Guidelines">ESC Guidelines (欧洲心脏病学会指南)</a></li>
+          <li><a href="https://professional.heart.org/guidelines">AHA/ACC Guidelines (美国心脏协会指南)</a></li>
+          <li><a href="https://www.nice.org.uk/guidance">NICE Cardiovascular Guidelines (英国国家指南)</a></li>
+          <li><a href="https://www.jcs.or.jp/english/guidelines/">JCS Guidelines (日本循环器学会指南)</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+        </svg>
+        <h3>内分泌指南</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.endocrine.org/clinical-practice-guidelines">Endocrine Society Guidelines</a></li>
+          <li><a href="https://professional.diabetes.org/content-page/practice-guidelines-resources">ADA Guidelines (糖尿病指南)</a></li>
+          <li><a href="https://www.thyroid.org/professionals/ata-professional-guidelines/">ATA Guidelines (甲状腺指南)</a></li>
+          <li><a href="https://www.aace.com/disease-state-resources">AACE Guidelines (美国内分泌医师协会指南)</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <h3>呼吸系统指南</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.ersnet.org/guidelines">ERS Guidelines (欧洲呼吸学会指南)</a></li>
+          <li><a href="https://www.thoracic.org/statements/">ATS Guidelines (美国胸科学会指南)</a></li>
+          <li><a href="https://goldcopd.org/guidelines-global-strategy-for-diagnosis-management/">GOLD Guidelines (COPD全球指南)</a></li>
+          <li><a href="https://ginasthma.org/">GINA Guidelines (哮喘全球指南)</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <h3>神经系统指南</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.aan.com/practice/guidelines">AAN Guidelines (美国神经病学会指南)</a></li>
+          <li><a href="https://www.eaneurology.org/guidelines">EAN Guidelines (欧洲神经病学会指南)</a></li>
+          <li><a href="https://professional.heart.org/stroke">Stroke Guidelines (卒中指南)</a></li>
+          <li><a href="https://www.wfneurology.org/guidelines">WFN Guidelines (世界神经病学联合会指南)</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <h3>消化系统指南</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.gastro.org/guidelines">ACG Guidelines (美国消化病学会指南)</a></li>
+          <li><a href="https://www.asge.org/home/guidelines">ASGE Guidelines (美国消化内镜学会指南)</a></li>
+          <li><a href="https://www.ueg.eu/guidelines/">UEG Guidelines (欧洲消化病学会指南)</a></li>
+          <li><a href="https://www.aasld.org/practice-guidelines">AASLD Guidelines (美国肝病学会指南)</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <h3>肿瘤指南</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.nccn.org/guidelines/">NCCN Guidelines (美国国家综合癌症网络指南)</a></li>
+          <li><a href="https://www.esmo.org/guidelines">ESMO Guidelines (欧洲肿瘤内科学会指南)</a></li>
+          <li><a href="https://www.asco.org/practice-guidelines">ASCO Guidelines (美国临床肿瘤学会指南)</a></li>
+          <li><a href="https://www.astro.org/guidelines">ASTRO Guidelines (放射治疗指南)</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <h3>感染病指南</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.idsociety.org/practice-guidelines">IDSA Guidelines (美国感染病学会指南)</a></li>
+          <li><a href="https://www.who.int/publications/guidelines">WHO Guidelines (世界卫生组织指南)</a></li>
+          <li><a href="https://www.escmid.org/guidelines">ESCMID Guidelines (欧洲临床微生物感染病学会指南)</a></li>
+          <li><a href="https://www.cdc.gov/infectioncontrol/guidelines/">CDC Guidelines (疾控中心指南)</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <h3>风湿免疫指南</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.rheumatology.org/Practice-Quality/Clinical-Support/Clinical-Practice-Guidelines">ACR Guidelines (美国风湿病学会指南)</a></li>
+          <li><a href="https://www.eular.org/recommendations_management.cfm">EULAR Guidelines (欧洲抗风湿病联盟指南)</a></li>
+          <li><a href="https://www.aplar.org/guidelines/">APLAR Guidelines (亚太风湿病联盟指南)</a></li>
+          <li><a href="https://www.nice.org.uk/guidance/conditions-and-diseases/musculoskeletal-conditions">NICE Rheumatology Guidelines</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="resources" class="guidelines-grid section">
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <h3>医学期刊数据库</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed Central</a></li>
+          <li><a href="https://www.sciencedirect.com/">Science Direct</a></li>
+          <li><a href="https://www.cochranelibrary.com/">Cochrane Library</a></li>
+          <li><a href="https://www.embase.com/">EMBASE</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        </svg>
+        <h3>顶级医学期刊</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.nejm.org/">New England Journal of Medicine</a></li>
+          <li><a href="https://www.thelancet.com/">The Lancet</a></li>
+          <li><a href="https://jamanetwork.com/">JAMA Network</a></li>
+          <li><a href="https://www.bmj.com/">The BMJ</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <h3>医学教育资源</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.uptodate.com/">UpToDate</a></li>
+          <li><a href="https://www.medscape.com/">Medscape</a></li>
+          <li><a href="https://www.osmosis.org/">Osmosis</a></li>
+          <li><a href="https://onlinemeded.org/">OnlineMedEd</a></li>
+        </ul>
+      </div>
+
+      <div class="guideline-card">
+        <svg class="category-icon" viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+        </svg>
+        <h3>药物信息数据库</h3>
+        <ul class="guidelines-list">
+          <li><a href="https://www.drugs.com/">Drugs.com</a></li>
+          <li><a href="https://reference.medscape.com/drugs">Medscape Drug Reference</a></li>
+          <li><a href="https://www.micromedexsolutions.com/">Micromedex</a></li>
+          <li><a href="https://www.accessdata.fda.gov/scripts/cder/daf/">FDA Drugs Database</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+<script>
+window.addEventListener('load', function() {
+  // Initialize card animations
+  document.querySelectorAll('.guideline-card').forEach((card, index) => {
+    setTimeout(() => {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, index * 100);
+  });
+
+  // Tab switching functionality
+  const tabs = document.querySelectorAll('.nav-tab');
+  const sections = document.querySelectorAll('.section');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs and sections
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
+
+      // Add active class to clicked tab and corresponding section
+      tab.classList.add('active');
+      const sectionId = tab.getAttribute('data-section');
+      document.getElementById(sectionId).classList.add('active');
+
+      // Reinitialize card animations for newly visible section
+      document.querySelectorAll(`#${sectionId} .guideline-card`).forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    });
+  });
+});
+</script>
+</body></html>
