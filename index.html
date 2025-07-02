@@ -1,140 +1,28 @@
 <html>
   <head>
-    <base href="/" />
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <title>国际医学指南与资源导航</title>
-    <style>
-      :root {
-        --primary: #2c6ba0;
-        --secondary: #4a90e2;
-        --text: #333;
-        --light: #f5f7fa;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif;
-        line-height: 1.6;
-        color: var(--text);
-        background: var(--light);
-      }
-
-      header {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: white;
-        padding: 2rem 1rem;
-        text-align: center;
-      }
-
-      .nav-tabs {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        padding: 1rem;
-        background: white;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .nav-tab {
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        border: none;
-        background: none;
-        color: var(--text);
-        font-size: 1.1rem;
-        transition: color 0.3s;
-      }
-
-      .nav-tab.active {
-        color: var(--primary);
-        border-bottom: 2px solid var(--primary);
-      }
-
-      .guidelines-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        padding: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .section {
-        display: none;
-      }
-
-      .section.active {
-        display: grid;
-      }
-
-      .guideline-card {
-        background: white;
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .guideline-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .category-icon {
-        width: 40px;
-        height: 40px;
-        fill: var(--primary);
-        margin-bottom: 1rem;
-      }
-
-      .guideline-card h3 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-      }
-
-      .guidelines-list {
-        list-style: none;
-      }
-
-      .guidelines-list li {
-        margin-bottom: 0.5rem;
-      }
-
-      .guidelines-list a {
-        color: var(--text);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .guidelines-list a:hover {
-        color: var(--secondary);
-      }
-
-      @media (max-width: 768px) {
-        .guidelines-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .nav-tabs {
-          flex-wrap: wrap;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <header>
-      <h1>国际医学指南与资源导航</h1>
+      <div class="logo-container">
+        <svg class="site-logo" width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 12H8L10.5 4.5L13.5 19.5L16 12H20" stroke="#0d47a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8V16" stroke="#0d47a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 12H16" stroke="#0d47a1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h1>国际医学指南与资源导航</h1>
+      </div>
       <p>全球权威医学指南与资源集成平台</p>
+      <div class="search-container">
+        <input type="text" id="search-box" placeholder="搜索指南或资源..." />
+      </div>
     </header>
 
     <nav class="nav-tabs">
@@ -145,409 +33,192 @@
     <main>
       <section id="guidelines" class="guidelines-grid section active">
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-            />
-          </svg>
-          <h3>心血管疾病指南</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <h3>心血管疾病</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.escardio.org/Guidelines"
-                >ESC Guidelines (欧洲心脏病学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://professional.heart.org/guidelines"
-                >AHA/ACC Guidelines (美国心脏协会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.nice.org.uk/guidance"
-                >NICE Cardiovascular Guidelines (英国国家指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.jcs.or.jp/english/guidelines/"
-                >JCS Guidelines (日本循环器学会指南)</a
-              >
-            </li>
+            <li><a href="https://www.escardio.org/Guidelines">ESC (欧洲心脏病学会)</a></li>
+            <li><a href="https://professional.heart.org/en/guidelines-and-statements">AHA/ACC (美国心脏协会/心脏病学会)</a></li>
+            <li><a href="https://www.nice.org.uk/guidance/conditions-and-diseases/cardiovascular-conditions">NICE (英国国家健康与临床优化研究所)</a></li>
+            <li><a href="https://www.jcs.or.jp/english/guidelines/">JCS (日本循环器学会)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"
-            />
-          </svg>
-          <h3>内分泌指南</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5L21 12l-7.5 7.5M4.5 19.5L12 12l-7.5-7.5"></path></svg>
+          <h3>内分泌与代谢</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.endocrine.org/clinical-practice-guidelines"
-                >Endocrine Society Guidelines</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://professional.diabetes.org/content-page/practice-guidelines-resources"
-                >ADA Guidelines (糖尿病指南)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.thyroid.org/professionals/ata-professional-guidelines/"
-                >ATA Guidelines (甲状腺指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.aace.com/disease-state-resources"
-                >AACE Guidelines (美国内分泌医师协会指南)</a
-              >
-            </li>
+            <li><a href="https://www.endocrine.org/clinical-practice-guidelines">Endocrine Society (内分泌学会)</a></li>
+            <li><a href="https://professional.diabetes.org/content-page/practice-guidelines-resources">ADA (美国糖尿病协会)</a></li>
+            <li><a href="https://www.thyroid.org/professionals/ata-professional-guidelines/">ATA (美国甲状腺协会)</a></li>
+            <li><a href="https://www.aace.com/disease-state-resources">AACE (美国临床内分泌医师协会)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-            />
-          </svg>
-          <h3>呼吸系统指南</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l-4 4m0-4l4 4m-4-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4"></path><path d="M12 14l4 4m0-4l-4 4"></path></svg>
+          <h3>呼吸系统</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.ersnet.org/guidelines"
-                >ERS Guidelines (欧洲呼吸学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.thoracic.org/statements/"
-                >ATS Guidelines (美国胸科学会指南)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://goldcopd.org/guidelines-global-strategy-for-diagnosis-management/"
-                >GOLD Guidelines (COPD全球指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://ginasthma.org/"
-                >GINA Guidelines (哮喘全球指南)</a
-              >
-            </li>
+            <li><a href="https://www.ersnet.org/guidelines">ERS (欧洲呼吸学会)</a></li>
+            <li><a href="https://www.thoracic.org/statements/">ATS (美国胸科学会)</a></li>
+            <li><a href="https://goldcopd.org/2024-gold-report/">GOLD (全球慢性阻塞性肺疾病防治倡议)</a></li>
+            <li><a href="https://ginasthma.org/gina-reports/">GINA (全球哮喘防治倡议)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"
-            />
-          </svg>
-          <h3>神经系统指南</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5a3.5 3.5 0 0 1 5 0M12 16H8.5a3.5 3.5 0 0 1-3.5-3.5V7.5a3.5 3.5 0 0 1 3.5-3.5h7A3.5 3.5 0 0 1 19 7.5v5a3.5 3.5 0 0 1-3.5 3.5H12zm0 0V21.5"></path></svg>
+          <h3>神经系统</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.aan.com/practice/guidelines"
-                >AAN Guidelines (美国神经病学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.eaneurology.org/guidelines"
-                >EAN Guidelines (欧洲神经病学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://professional.heart.org/stroke"
-                >Stroke Guidelines (卒中指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.wfneurology.org/guidelines"
-                >WFN Guidelines (世界神经病学联合会指南)</a
-              >
-            </li>
+            <li><a href="https://www.aan.com/practice/guidelines">AAN (美国神经病学会)</a></li>
+            <li><a href="https://www.eaneurology.org/guidelines">EAN (欧洲神经病学会)</a></li>
+            <li><a href="https://www.stroke.org.au/inform-me/clinical-guidelines">Stroke Foundation (卒中基金会)</a></li>
+            <li><a href="https://www.ilae.org/guidelines">ILAE (国际抗癫痫联盟)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-            />
-          </svg>
-          <h3>消化系统指南</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 15a6 6 0 0 0 6-6H6a6 6 0 0 0 6 6z"></path></svg>
+          <h3>消化系统</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.gastro.org/guidelines"
-                >ACG Guidelines (美国消化病学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.asge.org/home/guidelines"
-                >ASGE Guidelines (美国消化内镜学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.ueg.eu/guidelines/"
-                >UEG Guidelines (欧洲消化病学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.aasld.org/practice-guidelines"
-                >AASLD Guidelines (美国肝病学会指南)</a
-              >
-            </li>
+            <li><a href="https://www.gastro.org/guidelines">AGA (美国胃肠病学会)</a></li>
+            <li><a href="https://www.asge.org/home/guidelines">ASGE (美国消化内镜学会)</a></li>
+            <li><a href="https://www.ueg.eu/guidelines">UEG (欧洲联合胃肠病学会)</a></li>
+            <li><a href="https://www.aasld.org/practice-guidelines">AASLD (美国肝病研究学会)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-            />
-          </svg>
-          <h3>肿瘤指南</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10z"></path><path d="M12 6v12m-6-6h12"></path></svg>
+          <h3>肿瘤学</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.nccn.org/guidelines/"
-                >NCCN Guidelines (美国国家综合癌症网络指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.esmo.org/guidelines"
-                >ESMO Guidelines (欧洲肿瘤内科学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.asco.org/practice-guidelines"
-                >ASCO Guidelines (美国临床肿瘤学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.astro.org/guidelines"
-                >ASTRO Guidelines (放射治疗指南)</a
-              >
-            </li>
+            <li><a href="https://www.nccn.org/guidelines/category_1">NCCN (美国国家综合癌症网络)</a></li>
+            <li><a href="https://www.esmo.org/guidelines">ESMO (欧洲肿瘤内科学会)</a></li>
+            <li><a href="https://www.asco.org/practice-guidelines">ASCO (美国临床肿瘤学会)</a></li>
+            <li><a href="https://www.astro.org/guidelines">ASTRO (美国放射肿瘤学会)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-            />
-          </svg>
-          <h3>感染病指南</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path><path d="M12 8v8m-4-4h8"></path></svg>
+          <h3>感染病学</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.idsociety.org/practice-guidelines"
-                >IDSA Guidelines (美国感染病学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.who.int/publications/guidelines"
-                >WHO Guidelines (世界卫生组织指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.escmid.org/guidelines"
-                >ESCMID Guidelines (欧洲临床微生物感染病学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.cdc.gov/infectioncontrol/guidelines/"
-                >CDC Guidelines (疾控中心指南)</a
-              >
-            </li>
+            <li><a href="https://www.idsociety.org/practice-guideline/alphabetical-listing/">IDSA (美国感染病学会)</a></li>
+            <li><a href="https://www.who.int/publications/guidelines">WHO (世界卫生组织)</a></li>
+            <li><a href="https://www.escmid.org/guidelines">ESCMID (欧洲临床微生物与感染病学会)</a></li>
+            <li><a href="https://www.cdc.gov/infectioncontrol/guidelines/index.html">CDC (美国疾病控制与预防中心)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-            />
-          </svg>
-          <h3>风湿免疫指南</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5L12 3l7.5 7.5M4.5 13.5L12 21l7.5-7.5"></path></svg>
+          <h3>风湿免疫学</h3>
           <ul class="guidelines-list">
-            <li>
-              <a
-                href="https://www.rheumatology.org/Practice-Quality/Clinical-Support/Clinical-Practice-Guidelines"
-                >ACR Guidelines (美国风湿病学会指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.eular.org/recommendations_management.cfm"
-                >EULAR Guidelines (欧洲抗风湿病联盟指南)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.aplar.org/guidelines/"
-                >APLAR Guidelines (亚太风湿病联盟指南)</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.nice.org.uk/guidance/conditions-and-diseases/musculoskeletal-conditions"
-                >NICE Rheumatology Guidelines</a
-              >
-            </li>
+            <li><a href="https://www.rheumatology.org/practice-quality/clinical-support/clinical-practice-guidelines">ACR (美国风湿病学会)</a></li>
+            <li><a href="https://www.eular.org/recommendations_management.cfm">EULAR (欧洲抗风湿病联盟)</a></li>
+            <li><a href="https://www.aplar.org/guidelines">APLAR (亚太风湿病联盟)</a></li>
+            <li><a href="https://www.nice.org.uk/guidance/conditions-and-diseases/musculoskeletal-conditions">NICE (英国国家健康与临床优化研究所)</a></li>
+          </ul>
+        </div>
+        <div class="guideline-card">
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 0 0 10-10c0-5.523-4.477-10-10-10S2 6.477 2 12a10 10 0 0 0 10 10z"></path><path d="M12 6a6 6 0 0 1 6 6H6a6 6 0 0 1 6-6z"></path></svg>
+          <h3>肾脏病学</h3>
+          <ul class="guidelines-list">
+            <li><a href="https://kdigo.org/guidelines/">KDIGO (全球肾脏病预后倡议)</a></li>
+            <li><a href="https://www.renal.org/guidelines">The Renal Association (英国肾脏协会)</a></li>
+            <li><a href="https://www.kidney.org/professionals/guidelines">NKF (美国国家肾脏基金会)</a></li>
+            <li><a href="https://www.era-online.org/guidelines/">ERA (欧洲肾脏协会)</a></li>
+          </ul>
+        </div>
+        <div class="guideline-card">
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M12 15c-3.866 0-7 1.79-7 4"></path></svg>
+          <h3>儿科学</h3>
+          <ul class="guidelines-list">
+            <li><a href="https://www.aap.org/en/practice-management/clinical-practice-guidelines/">AAP (美国儿科学会)</a></li>
+            <li><a href="https://www.caringforkids.cps.ca/handouts/guidelines">CPS (加拿大儿科学会)</a></li>
+            <li><a href="https://www.rcpch.ac.uk/resources/clinical-guidelines">RCPCH (英国皇家儿科与儿童健康学院)</a></li>
+            <li><a href="https://www.who.int/maternal_child_adolescent/documents/child-health/en/">WHO Child Health (世界卫生组织)</a></li>
           </ul>
         </div>
       </section>
 
       <section id="resources" class="guidelines-grid section">
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-            />
-          </svg>
-          <h3>医学期刊数据库</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v15H6.5A2.5 2.5 0 0 1 4 14.5v-10A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <h3>文献数据库</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed Central</a>
-            </li>
-            <li><a href="https://www.sciencedirect.com/">Science Direct</a></li>
-            <li>
-              <a href="https://www.cochranelibrary.com/">Cochrane Library</a>
-            </li>
-            <li><a href="https://www.embase.com/">EMBASE</a></li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a></li>
+            <li><a href="https://www.cochranelibrary.com/">Cochrane Library</a></li>
+            <li><a href="https://www.embase.com/">Embase</a></li>
+            <li><a href="https://www.webofscience.com/">Web of Science</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-            />
-          </svg>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
           <h3>顶级医学期刊</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.nejm.org/"
-                >New England Journal of Medicine</a
-              >
-            </li>
-            <li><a href="https://www.thelancet.com/">The Lancet</a></li>
-            <li><a href="https://jamanetwork.com/">JAMA Network</a></li>
-            <li><a href="https://www.bmj.com/">The BMJ</a></li>
+            <li><a href="https://www.nejm.org/">NEJM (新英格兰医学杂志)</a></li>
+            <li><a href="https://www.thelancet.com/">The Lancet (柳叶刀)</a></li>
+            <li><a href="https://jamanetwork.com/">JAMA (美国医学会杂志)</a></li>
+            <li><a href="https://www.bmj.com/">The BMJ (英国医学杂志)</a></li>
+            <li><a href="https://www.annals.org/">Annals of Internal Medicine (内科学年鉴)</a></li>
+            <li><a href="https://www.nature.com/nm/">Nature Medicine (自然医学)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
-            />
-          </svg>
-          <h3>医学教育资源</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path><path d="M12 16.5V12"></path><path d="M12 8.5V8"></path></svg>
+          <h3>临床决策支持</h3>
           <ul class="guidelines-list">
-            <li>
-              <a href="https://www.uptodate.com/"
-                >UpToDate (循证医学决策支持)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.medscape.com/">Medscape (医学新闻和教育)</a>
-            </li>
-            <li><a href="https://www.webmd.com/">WebMD (医学健康资讯)</a></li>
-            <li>
-              <a href="https://medlineplus.gov/"
-                >MedlinePlus (美国国家医学图书馆资源)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.mayoclinic.org/"
-                >Mayo Clinic (梅奥诊所资源)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.healthline.com/"
-                >Healthline (健康医疗资讯)</a
-              >
-            </li>
-            <li>
-              <a href="https://my.clevelandclinic.org/"
-                >Cleveland Clinic (克利夫兰诊所资源)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.msdmanuals.cn/"
-                >MSD Manual (默沙东诊疗手册)</a
-              >
-            </li>
+            <li><a href="https://www.uptodate.com/">UpToDate</a></li>
+            <li><a href="https://www.dynamed.com/">DynaMed</a></li>
+            <li><a href="https://bestpractice.bmj.com/">BMJ Best Practice</a></li>
+            <li><a href="https://www.msdmanuals.com/professional">MSD Manual (默沙东诊疗手册专业版)</a></li>
           </ul>
         </div>
-
         <div class="guideline-card">
-          <svg class="category-icon" viewBox="0 0 24 24">
-            <path
-              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"
-            />
-          </svg>
-          <h3>药物信息数据库</h3>
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 7v10"></path><path d="M12 12l-3-3"></path><path d="M12 12l3-3"></path></svg>
+          <h3>药物信息</h3>
           <ul class="guidelines-list">
             <li><a href="https://www.drugs.com/">Drugs.com</a></li>
-            <li>
-              <a href="https://reference.medscape.com/drugs"
-                >Medscape Drug Reference</a
-              >
-            </li>
-            <li>
-              <a href="https://www.micromedexsolutions.com/">Micromedex</a>
-            </li>
-            <li>
-              <a href="https://www.accessdata.fda.gov/scripts/cder/daf/"
-                >FDA Drugs Database</a
-              >
-            </li>
+            <li><a href="https://www.pdr.net/">PDR (Physicians' Desk Reference)</a></li>
+            <li><a href="https://www.ema.europa.eu/en/medicines">EMA (欧洲药品管理局)</a></li>
+            <li><a href="https://www.accessdata.fda.gov/scripts/cder/daf/">FDA Drug Approvals and Databases</a></li>
+          </ul>
+        </div>
+        <div class="guideline-card">
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 12l-4-4m8 0l-4 4"></path></svg>
+          <h3>医学教育与资讯</h3>
+          <ul class="guidelines-list">
+            <li><a href="https://www.medscape.com/">Medscape</a></li>
+            <li><a href="https://www.mayoclinic.org/medical-professionals">Mayo Clinic for Medical Professionals</a></li>
+            <li><a href="https://www.medlineplus.gov/">MedlinePlus</a></li>
+            <li><a href="https://www.webmd.com/">WebMD</a></li>
+          </ul>
+        </div>
+        <div class="guideline-card">
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M12 18h-4m4-4h-4m4-4h-4"></path></svg>
+          <h3>临床试验</h3>
+          <ul class="guidelines-list">
+            <li><a href="https://www.clinicaltrials.gov/">ClinicalTrials.gov (美国)</a></li>
+            <li><a href="https://www.clinicaltrialsregister.eu/">EU Clinical Trials Register (欧盟)</a></li>
+            <li><a href="https://www.isrctn.com/">ISRCTN Registry</a></li>
+            <li><a href="https://www.chictr.org.cn/">ChiCTR (中国临床试验注册中心)</a></li>
+          </ul>
+        </div>
+        <div class="guideline-card">
+          <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"></path><path d="M7 7h2v2H7z"></path><path d="M15 7h2v2h-2z"></path><path d="M7 15h2v2H7z"></path><path d="M15 15h2v2h-2z"></path></svg>
+          <h3>医学计算器</h3>
+          <ul class="guidelines-list">
+            <li><a href="https://www.mdcalc.com/">MDCalc</a></li>
+            <li><a href="https://reference.medscape.com/public/calculators">Medscape Calculators</a></li>
+            <li><a href="https://globalrph.com/medcalcs/">GlobalRPH Medical Calculators</a></li>
+            <li><a href="https://www.qxmd.com/calculate">Calculate by QxMD</a></li>
           </ul>
         </div>
       </section>
     </main>
 
-    <script>
-      window.addEventListener("load", function () {
-        // Initialize card animations
-        document.querySelectorAll(".guideline-card").forEach((card, index) => {
-          setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-          }, index * 100);
-        });
+    <footer>
+      <p>
+        &copy; 2024 国际医学指南与资源导航. All Rights Reserved.
+      </p>
+      <p>
+        <a href="https://github.com/yourusername/medical-guidelines-navigator">GitHub Repository</a>
+      </p>
+    </footer>
 
-        // Tab switching functionality
-        const tabs = document.querySelectorAll(".nav-tab");
-        const sections = document.querySelectorAll(".section");
-
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", () => {
-            // Remove active class from all tabs and sections
-            tabs.forEach((t) => t.classList.remove("active"));
-            sections.forEach((s) => s.classList.remove("active"));
-
-            // Add active class to clicked tab and corresponding section
-            tab.classList.add("active");
-            const sectionId = tab.getAttribute("data-section");
-            document.getElementById(sectionId).classList.add("active");
-
-            // Reinitialize card animations for newly visible section
-            document
-              .querySelectorAll(`#${sectionId} .guideline-card`)
-              .forEach((card, index) => {
-                card.style.opacity = "0";
-                card.style.transform = "translateY(20px)";
-                setTimeout(() => {
-                  card.style.opacity = "1";
-                  card.style.transform = "translateY(0)";
-                }, index * 100);
-              });
-          });
-        });
-      });
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
